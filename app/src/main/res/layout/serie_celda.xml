@@ -15,7 +15,8 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginStart="16dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="16dp" />
+        android:layout_marginLeft="16dp"
+        android:contentDescription="@string/poster" />
 
     <TextView
         android:text="Name"
@@ -23,7 +24,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/tv_title"
         tools:layout_editor_absoluteY="32dp"
-        tools:layout_editor_absoluteX="140dp" />
+        tools:layout_editor_absoluteX="140dp"
+        tools:ignore="HardcodedText,MissingConstraints" />
 
     <TextView
         android:text="Cant Episodios"
@@ -32,5 +34,6 @@
         android:id="@+id/tv_countEpisodes"
         android:layout_marginTop="24dp"
         app:layout_constraintTop_toBottomOf="@+id/tv_title"
-        app:layout_constraintLeft_toLeftOf="@+id/tv_title" />
+        app:layout_constraintLeft_toLeftOf="@+id/tv_title"
+        tools:ignore="HardcodedText" />
 </android.support.constraint.ConstraintLayout>
