@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 /**
@@ -50,11 +52,15 @@ public class CustomAdapter extends BaseAdapter {
 
         View celdaView = inflater.inflate(R.layout.serie_celda, parent, false);
 
-        Serie.ResultsBean celda = (Serie.ResultsBean) getItem(position);
+        Serie.ResultsBean serie = (Serie.ResultsBean) getItem(position);
 
         ImageView portada = (ImageView) celdaView.findViewById(R.id.iv_portada);
         TextView name = (TextView) celdaView.findViewById(R.id.tv_title);
         TextView count = (TextView) celdaView.findViewById(R.id.tv_countEpisodes);
+
+        name.setText(serie.getName());
+        count.setText(serie.getCount_of_episodes());
+        Picasso.with(myContext).load(serie.getImage().getThumb_url()).into(portada);
 
         return celdaView;
     }
